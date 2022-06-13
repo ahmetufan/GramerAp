@@ -14,6 +14,8 @@ interface ModelAPI {
     //  http://www.adddisyon.online/  eng_test.php
 
     @GET("eng_test.php")
-    fun getTestAPI() : Single<TestModel>
+    fun getTestAPI(
+        @Query("kategori_id") kategoriId : Int
+    ) : Single<TestModel>
 
 }
