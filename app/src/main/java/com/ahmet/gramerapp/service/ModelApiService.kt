@@ -26,7 +26,7 @@ class TestAPIService {
     private val retrofit2=Retrofit.Builder().baseUrl(Base_URL).addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build().create(ModelAPI::class.java)
 
-    fun getAPITest():Single<TestModel> {
-        return retrofit2.getTestAPI()
+    fun getAPITest(kategoriId : Int):Single<TestModel> {
+        return retrofit2.getTestAPI(kategoriId)
     }
 }

@@ -17,7 +17,7 @@ class ObjectsFragment : Fragment() {
 
     private lateinit var viewModel: ObjectViewModel
     private lateinit var adaptery2: AdapteryTest
-    private var gelenid = ""
+    private var gelenid = 0
 
 
     private var selectedTest = ""
@@ -37,18 +37,18 @@ class ObjectsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-/*
+
         arguments?.let {
-            gelenid=ObjectsFragmentArgs.fromBundle(it).uId
+            gelenid=ObjectsFragmentArgs.fromBundle(it).kategoriId
         }
 
- */
+
 
 
 
         viewModel = ViewModelProvider(this).get(ObjectViewModel::class.java)
 
-        viewModel.resreshTest()
+        viewModel.resreshTest(gelenid)
 
         recyclerView.layoutManager = GridLayoutManager(context, 2)
         adaptery2 = AdapteryTest(arrayListOf())

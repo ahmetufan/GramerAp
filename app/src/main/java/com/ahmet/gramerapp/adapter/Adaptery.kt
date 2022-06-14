@@ -30,7 +30,7 @@ class Adaptery(private val list1: ArrayList<Kategori>): RecyclerView.Adapter<Ada
 
         holder.itemView.setOnClickListener {
 
-            val action=HomeFragmentDirections.actionHomeFragmentToObjectsFragment(list1[position].id)
+            val action=HomeFragmentDirections.actionHomeFragmentToObjectsFragment(list1[position].id.toInt())
             Navigation.findNavController(it).navigate(action)
         }
 

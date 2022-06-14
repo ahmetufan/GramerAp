@@ -16,12 +16,12 @@ class ObjectViewModel:ViewModel() {
 
     val test=MutableLiveData<TestModel>()
 
-    fun resreshTest(){
-        getDataFromTest()
+    fun resreshTest(kategoriId : Int){
+        getDataFromTest(kategoriId)
     }
-    private fun getDataFromTest() {
+    private fun getDataFromTest(kategoriId : Int) {
 
-        compositeDisposable.add(testAPIService.getAPITest()
+        compositeDisposable.add(testAPIService.getAPITest(kategoriId)
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object : DisposableSingleObserver<TestModel>(){
